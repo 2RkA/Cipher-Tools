@@ -6,7 +6,7 @@ Parameters for cipher function:
 from caesar_cipher import cipher
 
 
-def gen_ciphertext(message):
+def gen_ciphertext(message: str) -> str:
     """
     Yields key and respective ciphertext 26 times
     """
