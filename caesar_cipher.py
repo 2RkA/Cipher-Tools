@@ -7,7 +7,8 @@ by Wesley Jiang and Gerard Gandionco
 def cipher(key: int, message: str) -> str:
     """
     Returns a coded message
-    - also able to decode messages with negative key 
+    - also able to decode messages with negative key
+    - going above 26 will wrap it back to 1 
     """
 
     alpha_list = "abcdefghijklmnopqrstuvwxyz"
@@ -30,18 +31,18 @@ def cipher(key: int, message: str) -> str:
 if __name__ == "__main__":
 
     # Takes user input for key (an int) and a message (a str)
+    print("Enter 'quit' to exit out anytime")
     while True:
         try:
-            print("Enter 'quit' to exit out anytime")
-            print("\nEnter your key")
+            print("Enter your key")
             key1 = input("> ")
-            if key1 == "quit":
+            if key1.lower().strip() == "quit":
                 break
             key2 = int(key1)
 
             print("Enter your message")
             plaintext = input("> ")
-            if plaintext == 'quit':
+            if plaintext.lower().strip() == 'quit':
                 break
 
         except ValueError:
@@ -49,4 +50,4 @@ if __name__ == "__main__":
         else:
             # Calls cipher function and returns new encrypted message
             new_message = cipher(key2, plaintext)
-            print(f"Your new message is: {new_message}\n")
+            print(f"\nYour new message is: {new_message}\n")
