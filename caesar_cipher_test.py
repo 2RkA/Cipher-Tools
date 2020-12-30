@@ -1,6 +1,5 @@
 """
 Outputs all 26 cipher cases.
-Parameters for cipher function:
 """
 
 from caesar_cipher import cipher
